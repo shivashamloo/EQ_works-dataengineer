@@ -27,7 +27,7 @@ Assigning each record to the closest POI. Since POI1 and POI2 has the same locat
 ### 3.Analysis
 
 |POIID|average|standard deviation|radius|requests|density|
-
+|-----|-------|------------------|------|--------|-------|
 |POI4|1287.0372141876474|268.382193451716| 8899.676501173562|7089|2.811812828200878E-4|
 
 |POI2| 538.5734471190653|988.328870276214| 3704.889111069485|6307|0.001443518240010...|
