@@ -25,17 +25,13 @@ The originial dataset contains 22025 record.After removing the suspicious record
 Assigning each record to the closest POI. Since POI1 and POI2 has the same location, there are points that assigned to both POI1 and POI2. Furthur information is needed to assign each of these records to either POI1 or POI2.
 
 ### 3.Analysis
-|-|-|-|-|-|-|
+
 |POIID|average|standard deviation|radius|requests|density|
-|-|-|-|-|-|-|
 |POI4|1287.0372141876474|268.382193451716| 8899.676501173562|7089|2.811812828200878E-4|
-|-|-|-|-|-|-|
 |POI2| 538.5734471190653|988.328870276214| 3704.889111069485|6307|0.001443518240010...|
-|-|-|-|-|-|-|
 |POI1| 538.5734471190653|988.328870276214| 3704.889111069485|6307|0.001443518240010...|
-|-|-|-|-|-|-|
 |POI3|2115.8017213703793|1355.6171574764228|3959.5162091581888|4577|9.171630180694846E-4|
-|-|-|-|-|-|-|
+
 
 
 ### 4.Data Science/Engineering Tracks
@@ -49,18 +45,12 @@ This formula is based on the fact that:
 * The higher the average distance, the less popular the POI.
 * Standard deviation measures the amount of dispersion, as a result, the higher the std, the less effect of average.
 * The more percentage of the records belong to the certain POI the more popular the POI 
-|-|-|-|-|-|-|-|
-|POIID|average|standard deviation|radius|requests|density|popularity|
-|-|-|-|-|-|-|-|
-|POI4|1287.0372141876474|268.382193451716| 8899.676501173562|7089|2.811812828200878E-4|-9.981908496237493|
-|-|-|-|-|-|-|-|
-|POI2|538.5734471190653|988.328870276214| 3704.889111069485|6307|0.001443518240010...|6.136952250611687|
-|-|-|-|-|-|-|-|
-|POI1|538.5734471190653|988.328870276214|3704.889111069485|6307|0.001443518240010...| 6.136952250611687|
-|-|-|-|-|-|-|-|
-|POI3|2115.8017213703793|1355.6171574764228|3959.5162091581888|4577|9.171630180694846E-4|-3.559646111231005|
-|-|-|-|-|-|-|-|
 
+|POIID|average|standard deviation|radius|requests|density|popularity|
+|POI4|1287.0372141876474|268.382193451716| 8899.676501173562|7089|2.811812828200878E-4|-9.981908496237493|
+|POI2|538.5734471190653|988.328870276214| 3704.889111069485|6307|0.001443518240010...|6.136952250611687|
+|POI1|538.5734471190653|988.328870276214|3704.889111069485|6307|0.001443518240010...| 6.136952250611687|
+|POI3|2115.8017213703793|1355.6171574764228|3959.5162091581888|4577|9.171630180694846E-4|-3.559646111231005|
 ### 4b.Pipeline Dependency
 Finds solution based on Breadth First Search.
 `[21, 73, 100, 20, 73, 112, 73, 94, 73, 56, 97, 102, 36]` 
