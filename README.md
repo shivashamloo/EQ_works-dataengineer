@@ -1,7 +1,7 @@
 
 # Solution for the Work Sample for Data Aspect, PySpark Variant
 
-This is the solution of [EQ works take home assessment?](https://gist.github.com/woozyking/f1d50e1fe1b3bf52e3748bc280cf941f#file-question-txt)
+This is the solution of [EQ works take home assessment](https://gist.github.com/woozyking/f1d50e1fe1b3bf52e3748bc280cf941f#file-question-txt)
 
 The program is in solution.py and the jupyter notebook is in solution.ipynb
 
