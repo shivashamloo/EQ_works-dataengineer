@@ -56,7 +56,7 @@ This formula is based on the fact that:
 
 ### 4b.Pipeline Dependency
 Finds solution based on Breadth First Search.
-`[21, 100, 73, 20, 112, 94, 56, 97, 102, 36]` 
+`[73, 21, 100, 20, 112, 94, 56, 97, 102, 36]` 
 
 ## Author
 

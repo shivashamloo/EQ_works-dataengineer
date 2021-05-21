@@ -145,8 +145,8 @@ def pipeline_dependency(relations_input, tasks_input, question_input):
 
     relations = relations.to_dict()
 
-    tasks = mark_complete(relations, start, tasks)
-    return bfs(relations, start, end, tasks)
+    tasks, visited = mark_complete(relations, start, tasks)
+    return bfs(relations, start, end, tasks, visited)
 
 
 def mark_complete(graph, root, ids):
@@ -160,17 +160,19 @@ def mark_complete(graph, root, ids):
     """
     queue = [root]
     ids[root] = True
+    visited = [root]
     while queue:
         s = queue.pop(0)
         if s in graph.keys():
             for node in graph[s]:
                 if not ids[node]:
                     queue.append(node)
+                    visited.append(node)
                 ids[node] = True
-    return ids
+    return ids, visited
 
 
-def bfs(graph, root, leaf, ids):
+def bfs(graph, root, leaf, ids, visited):
     """
     Finding the best path between two tasks using Breadth First Search
     parameters:
@@ -178,10 +180,13 @@ def bfs(graph, root, leaf, ids):
     root: Start task
     leaf: goal task
     ids: All of the tasks and their state of completion
+    visited: all the tasks that is assumed to have completed 
+
     """
     queue = [leaf]
     ids[leaf] = True
     path = []
+    start = False
     while queue:
         s = queue.pop(0)
         path.append(s)
@@ -189,10 +194,12 @@ def bfs(graph, root, leaf, ids):
             for node in graph[s]:
                 if not ids[node]:
                     queue.append(node)
-                if ids[node]:
-                    if node not in path:
-                        path.append(root)
+                if node in visited:
+                    if root not in path:
+                        start=True
                 ids[node] = True
+    if start:
+        path.append(root)
 
     return path[::-1]
 
@@ -209,7 +216,6 @@ if __name__ == '__main__':
     popularity = model_popularity(points_analysis)
 
     pipeline = pipeline_dependency('relations.txt', 'task_ids.txt', 'question.txt')
-
 
 
 
